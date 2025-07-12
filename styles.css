@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* अब बैकग्राउंड में रेड से ब्लू का डार्क ग्रेडिएंट */
+  background: linear-gradient(135deg, #ff0057 0%, #3f00ff 100%); /* hot pink → purple-blue */
+}
+
+.container {
+  /* कंटेनर के लिए भी red-blue मिश्रण हुआ बैकग्राउंड */
+  background: linear-gradient(145deg, rgba(255, 0, 87, 0.9) 0%, rgba(63, 0, 255, 0.9) 100%);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  padding: 40px 30px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.container:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  margin-bottom: 24px;
+  font-size: 2rem;
+  color: #fff; /* white to stand out */
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+input {
+  flex: 1;
+  padding: 14px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+input:focus {
+  outline: none;
+  border-color: #00e5ff;
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.4);
+}
+
+button , input {
+   padding: 14px 24px;
+  background: #ffffff;
+  color: #3f00ff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+
+  /* button shadow – हल्का outer glow और गहरी नीली shadow */
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 12px rgba(63, 0, 255, 0.2);
+}
+button:hover:not(:disabled) {
+  background: #f0f0ff;
+  transform: scale(1.04);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 6px 16px rgba(63, 0, 255, 0.3);
+}
+button:disabled {
+   background: #ddd;
+  color: #888;
+  cursor: not-allowed;
+}
+
+#qrcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.hidden {
+  display: none !important;
+}
